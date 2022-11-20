@@ -328,18 +328,150 @@ fun listOfLists() {
         mutableListOf<Int>(3, 4, 5)
     )
 //    You can create nested lists with different numbers of elements in the same 2D list.
+}
 
 
+fun accessingElements() {
+//    Let’s see how we can access an element of a list. The principle is exactly
+//    the same as for one-dimensional lists. Only now we have to write two indices:
+//    first, the index of the element of the main list and then, the index of the
+//    nested list.
+//    Let's get back to our mutList2D for a moment. Suppose we need to access
+//    an element that is in the first row and the first column. How do we find this
+//    particular element? As you recall, mutList2D is a list of lists. So, start by
+//    selecting one of the nested lists by its index in the main list. The principle
+//    is similar to a 1D list.
+//    First, go to the nested lists and choose the inner list with its index:
 
+    val mutList2D = mutableListOf(
+        mutableListOf<Int>(0, 1, 2),   //[0]
+        mutableListOf<Int>(3, 4, 5)    //[1]
+    )
+//    mutList2D[0]	0	1	2
+//    mutList2D[1]	3	4	5
+
+//    Second, in this nested list, choose the required element with its index,
+//    just like we did with 1D lists:
+//    mutList2D[0][0]	mutList2D[0][1]	mutList2D[0][2]
+//    0	1 2
+//    Let's print mutList2D[0][0]: the element in the first row and the first
+//    column of our mutList2D:
+    val muttList2D = mutableListOf(
+        mutableListOf<Int>(0, 1, 2),   //[0]
+        mutableListOf<Int>(3, 4, 5)    //[1]
+    )
+    println(muttList2D[0][0])	// 0
+
+//    Remember that in all lists indexing starts with 0!
+//    The following code will show all the elements of the
+//    two-dimensional list mutList2D:
+    print(mutList2D[0][0])  // 0
+    print(mutList2D[0][1])  // 1
+    print(mutList2D[0][2])  // 2
+    print(mutList2D[1][0])  // 3
+    print(mutList2D[1][1])  // 4
+    print(mutList2D[1][2])  // 5
+}
+
+
+fun creating2dListsOfDifferentTypes() {
+//    Nested lists don't need to be of type Int: as you remember, Kotlin provides
+//    various types of lists. For example, you can create a list of string lists
+//    as in the example below.
+//    You can also clearly define the type of elements of nested lists:
+    val mutListOfString2D = mutableListOf(
+        mutableListOf<String>("to", "be", "or"),
+        mutableListOf<String>("not", "to", "be")
+    )
+
+//    In order to create nested lists of primitives, you can use lists of a
+//    certain type as we did for one-dimensional lists: Int, Long, Double, Float, C
+//    har, Short, Byte, and Boolean.
+//    For example, let's consider creating a mutable list of the character type:
+    val mutListOfChar2D = mutableListOf(
+        mutableListOf<Char>('A', 'R', 'R'),
+        mutableListOf<Char>('A', 'Y', 'S')
+    )
+
+//    You can imagine it like this:
+//    A	R R
+//    A	Y S
+//    Besides, nested lists can be of different types. For example, you can create
+//    a two-dimensional list that stores both Int and String lists:
+    val mutListOfStringAndInt2D = mutableListOf(
+        mutableListOf<String>("Practice", "makes", "perfect"),
+        mutableListOf<Int>(1, 2)
+    )
+//    You can create nested lists of different types in the same 2D list.
+}
+
+
+fun featuresOfWorkingWith2dLists() {
+//    Let’s look at some useful and interesting features of working with
+//    two-dimensional lists. You remember that we can print all the elements
+//    of a list as a string using the joinToString() function. For nested lists,
+//    it will also work. Only now you must specify the index of the nested list
+//    that you want to convert to a string:
+    val mutListString = mutableListOf(
+        mutableListOf<String>("A", "R", "R", "A", "Y")
+    )
+    print(mutListString[0].joinToString())    // A, R, R, A, Y
+
+//    In the case of multi-dimensional lists, this will not always be convenient.
+//    In order to get the contents of all lists in a single string, you just print
+//    the main list:
+    val mutListOfChar2D = mutableListOf(
+        mutableListOf<Char>('k'),
+        mutableListOf<Char>('o', 't'),
+        mutableListOf<Char>('l', 'i', 'n'))
+
+    println(mutListOfChar2D)	// [[k], [o, t], [l, i, n]]
+}
+
+
+fun moreThanTwoDimensions() {
+//    We are finally ready to deal with more complex concepts. There are lists
+//    with more than two dimensions. Even though it is more difficult to understand
+//    what it looks like, don’t worry: you will get used to working with them.
+//    You can imagine a three-dimensional list like this:
+//    [0, 1]	[2, 3]
+//    [4, 5]	[6, 7]
+//    In each element of a two-dimensional list, you have another nested list.
+//    You can imagine it as a cube or a box: it has exactly three dimensions — length,
+//    width, and height. Take the following practical situation: imagine that you
+//    need to figure out the location of a car in a multi-storey parking lot.
+//    Then, you have to set three numbers, the three coordinates: floor, row,
+//    and place in a row.
+//    The following code creates the three-dimensional mutable list
+//    you just saw above:
+    val mutList3D = mutableListOf(
+        mutableListOf(mutableListOf<Int>(0,1), mutableListOf<Int>(2,3)),
+        mutableListOf(mutableListOf<Int>(4,5), mutableListOf<Int>(6,7))
+    )
+    println(mutList3D)  // [[[0, 1], [2, 3]], [[4, 5], [6, 7]]]
+
+//    Accordingly, in order to refer to an element of such a list, we need
+//    three indices:
+    println(mutList3D[0][0][1])   // 1
+    println(mutList3D[1][0][1])   // 5
+    println(mutList3D[1][1][1])   // 7
+//    You can create lists with even more dimensions by analogy — 4, 5, 6 dimensions,
+//    and so on — as you need. Just remember that an element of a multidimensional
+//    list has as many indices as there are dimensions in that list.
 }
 
 
 
 fun main() {
-    mutableList()
-    forLoopAndMutableList()
+//    mutableList()
+//    forLoopAndMutableList()
 
-//    Mutli-dimensional list
+//    Multidimensional list
+    listOfLists()
+    accessingElements()
+    creating2dListsOfDifferentTypes()
+    featuresOfWorkingWith2dLists()
+    moreThanTwoDimensions()
 }
 
 
