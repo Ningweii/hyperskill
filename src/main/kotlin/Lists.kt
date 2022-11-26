@@ -319,7 +319,7 @@ fun listOfLists() {
 //    0	 0  0  0
 
 //    We can say that the lists with four zero elements are nested in the mutList2D.
-//    The list that contains other lists is called the main list.
+//    The list that contains other lists is called the projects.main list.
 //    Note an interesting feature: nested lists do not necessarily have to be the same size.
 //    In the example below, each new embedded list has a different length:
     val muttList2D = mutableListOf(
@@ -334,12 +334,12 @@ fun listOfLists() {
 fun accessingElements() {
 //    Let’s see how we can access an element of a list. The principle is exactly
 //    the same as for one-dimensional lists. Only now we have to write two indices:
-//    first, the index of the element of the main list and then, the index of the
+//    first, the index of the element of the projects.main list and then, the index of the
 //    nested list.
 //    Let's get back to our mutList2D for a moment. Suppose we need to access
 //    an element that is in the first row and the first column. How do we find this
 //    particular element? As you recall, mutList2D is a list of lists. So, start by
-//    selecting one of the nested lists by its index in the main list. The principle
+//    selecting one of the nested lists by its index in the projects.main list. The principle
 //    is similar to a 1D list.
 //    First, go to the nested lists and choose the inner list with its index:
 
@@ -419,7 +419,7 @@ fun featuresOfWorkingWith2dLists() {
 
 //    In the case of multi-dimensional lists, this will not always be convenient.
 //    In order to get the contents of all lists in a single string, you just print
-//    the main list:
+//    the projects.main list:
     val mutListOfChar2D = mutableListOf(
         mutableListOf<Char>('k'),
         mutableListOf<Char>('o', 't'),

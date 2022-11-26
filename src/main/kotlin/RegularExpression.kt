@@ -306,7 +306,7 @@ fun makeMatchesUppercase() {
     // Find regex pattern matches in a text and print them in upper case inside that text
 
     val txt = """
-        Leave spaces and lines between main ideas so you can revisit them later and add information. 
+        Leave spaces and lines between projects.main ideas so you can revisit them later and add information. 
         Gender a consistent system of abbreviations and symbols to save time. 
         Write in phrases, not complete sentences. 
         Learn to pull out important information and ignore trivial information. 

@@ -9,7 +9,7 @@ fun main() {
 //    Functions can divide a program into small reusable pieces.
 //    It is called decomposition. You can call these pieces as many times as you need,
 //    instead of repeating them. A decomposed program has a modular structure;
-//    it is easier to modify and maintain than a program with one main function
+//    it is easier to modify and maintain than a program with one projects.main function
 //    that contains a thousand lines. This idea comes from procedural programming.
 
 //    Basic syntax
