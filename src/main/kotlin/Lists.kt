@@ -460,6 +460,24 @@ fun moreThanTwoDimensions() {
 //    list has as many indices as there are dimensions in that list.
 }
 
+fun prefixPostfix() {
+    // joinToString prefix and postfix
+    val numArr = intArrayOf(3, 4, 5)
+    println(numArr.joinToString(prefix = "#", postfix = "&"))
+}
+
+fun allFunction() {
+    val n = readLine()!!.toInt() // read the value of N from the first line
+
+    // read the numbers from the subsequent lines and check if they are sorted in ascending order
+    val isSorted = (1..n).all { readLine()!!.toInt() > it - 1 }
+
+    // print the result
+    println(if (isSorted) "YES" else "NO")
+}
+
+
+
 
 
 fun main() {

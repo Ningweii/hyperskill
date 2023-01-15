@@ -58,6 +58,45 @@ fun transform(color: String) = when (color) {
     "blue" -> 2
 //    else -> throw IllegalArgumentException("Invalid color param value")
     else -> "whaat??"
+
+
+
 }
+
+
+// -------------------------------- Extension Functions -----------------------------------
+
+fun isPal() {
+//    Palindrome
+    fun String.isPalindrome() = this == this.reversed()
+    println(if("racecar".isPalindrome()) "Is palindrome!" else "Is not palindrome!")
+}
+
+
+fun fac() {
+//    Factorial
+    fun Int.factorial(): Int {
+        var result = 1
+        for (i in 2..this) {
+            result *= i
+        }
+        return result
+    }
+
+    println(2.factorial())
+}
+
+fun filter() {
+//    filterKeys and filterValues
+    val myMap = mapOf(1 to "one", 2 to "two", 3 to "three", 4 to "four", 5 to "five")
+    val evens = myMap.filterKeys { it % 2 == 0 }
+    println(evens)
+
+    val numbers = mapOf("one" to 1, "two" to 2, "three" to 3, "four" to 4, "five" to 5)
+    val evenNumbers = numbers.filterValues { it % 2 == 0 }
+    println(evenNumbers) // Output: {two=2, four=4}
+}
+
+
 
 
